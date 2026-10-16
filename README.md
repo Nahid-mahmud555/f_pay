@@ -6,6 +6,10 @@
   <strong>Organize Money · Understand Transactions · Improve Financial Security</strong>
 </p>
 
+<p align="center">
+  <img src="pic_01.png" alt="F Pay — A Protective Digital Wallet Framework" width="800">
+</p>
+
 F Pay is a security-oriented digital wallet prototype exploring how structured money management, purpose-aware budgeting, transaction risk awareness, and user-controlled security workflows can work together in a unified financial interface.
 
 The project began as a lightweight prototype built with HTML, CSS, JavaScript, and Python. For the next development phase, we propose evolving it into a modular application with a modern frontend, a dedicated backend, transaction assessment services, and an optional permissioned blockchain and privacy-preserving technology layer.
