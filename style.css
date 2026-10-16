@@ -1,0 +1,167 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   F PAY — Demo stylesheet
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ---------- Base ---------- */
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:#FAF8F2;
+  color:#202124;
+}
+
+/* ---------- Banner ---------- */
+.demo-banner{
+  background:#FEF3C7;
+  color:#92400E;
+  text-align:center;
+  padding:6px 12px;
+  font-size:12px;
+  font-weight:500;
+}
+
+/* ---------- Cards ---------- */
+.card{
+  background:#fff;
+  border:1px solid #EAE7DF;
+  border-radius:16px;
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  border-radius:12px;
+  padding:12px 18px;
+  font-weight:600;
+  transition:all .15s;
+  cursor:pointer;
+  border:none;
+  font-size:15px;
+}
+.btn-primary{ background:#176B52; color:#fff; }
+.btn-primary:hover{ background:#125a44; }
+.btn-primary:disabled{ background:#c8cfcb; cursor:not-allowed; }
+
+.btn-ghost{
+  background:transparent;
+  color:#202124;
+  border:1px solid #EAE7DF;
+}
+.btn-ghost:hover{ background:#FAF8F2; }
+
+.btn-danger{ background:#FEE2E2; color:#991B1B; }
+
+/* ---------- Inputs ---------- */
+.input{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid #EAE7DF;
+  border-radius:12px;
+  background:#fff;
+  outline:none;
+  font-size:15px;
+  font-family:inherit;
+}
+.input:focus{
+  border-color:#176B52;
+  box-shadow:0 0 0 3px rgba(23,107,82,0.12);
+}
+
+/* ---------- Pills ---------- */
+.pill{
+  display:inline-block;
+  padding:2px 10px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:600;
+}
+.pill-demo{ background:#FEF3C7; color:#92400E; }
+.pill-ok{ background:#DCFCE7; color:#166534; }
+.pill-warn{ background:#FEF3C7; color:#92400E; }
+.pill-danger{ background:#FEE2E2; color:#991B1B; }
+
+/* ---------- Toast ---------- */
+.toast{
+  position:fixed;
+  bottom:24px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#202124;
+  color:#fff;
+  padding:12px 20px;
+  border-radius:12px;
+  font-size:14px;
+  z-index:120;
+  opacity:0;
+  transition:opacity .2s;
+  pointer-events:none;
+  max-width:90vw;
+}
+.toast.show{ opacity:1; }
+
+/* ---------- Modal ---------- */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(32,33,36,0.5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:100;
+  padding:16px;
+}
+.modal-card{
+  background:#fff;
+  border-radius:20px;
+  padding:24px;
+  max-width:420px;
+  width:100%;
+  max-height:90vh;
+  overflow-y:auto;
+}
+
+/* ---------- Nav items (sidebar) ---------- */
+.nav-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 14px;
+  border-radius:10px;
+  color:#777;
+  font-weight:500;
+  cursor:pointer;
+  font-size:14px;
+}
+.nav-item:hover{ background:#FAF8F2; color:#202124; }
+.nav-item.active{ background:#176B52; color:#fff; }
+
+/* ---------- Layer tiles ---------- */
+.layer-tile{
+  aspect-ratio:1;
+  border-radius:16px;
+  border:1px solid #EAE7DF;
+  background:#fff;
+  padding:12px;
+  cursor:pointer;
+  transition:all .15s;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  text-align:left;
+}
+.layer-tile:hover{
+  border-color:#176B52;
+  box-shadow:0 2px 8px rgba(23,107,82,0.08);
+}
+.layer-tile.empty{ background:#FAF8F2; }
+
+/* ---------- Responsive ---------- */
+@media(max-width:768px){
+  .desk-nav{ display:none !important; }
+  .mob-nav{ display:flex !important; }
+  .with-sidebar{
+    margin-left:0 !important;
+    padding-bottom:80px !important;
+  }
+}
+@media(min-width:769px){
+  .mob-nav{ display:none !important; }
+}
