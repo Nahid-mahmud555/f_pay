@@ -78,62 +78,27 @@ The layers are a **logical organization of funds**, not 20 separate bank account
 
 The architecture separates the user interface, access controls, money organization, transaction assessment, and transaction simulation.
 
-```text
-                 USER
-                   |
-                   v
-          +------------------+
-          |  F Pay Interface |
-          +------------------+
-                   |
-                   v
-          +------------------+
-          | Authentication & |
-          | Access Control   |
-          +------------------+
-                   |
-                   v
-          +------------------+
-          | Wallet Dashboard |
-          +------------------+
-                   |
-                   v
-          +------------------+
-          | 20-Layer Money   |
-          | Management       |
-          +------------------+
-                   |
-                   v
-          +------------------+
-          | Transaction      |
-          | Assessment Layer |
-          +------------------+
-                   |
-          +--------+--------+
-          |                 |
-          v                 v
- +----------------+  +----------------+
- | Budget & Plan  |  | Security & Risk |
- | Comparison     |  | Awareness       |
- +----------------+  +----------------+
-          |                 |
-          +--------+--------+
-                   |
-                   v
-          +------------------+
-          | Warning / Review |
-          +------------------+
-                   |
-                   v
-          +------------------+
-          | User Confirmation|
-          +------------------+
-                   |
-                   v
-          +------------------+
-          | Simulated        |
-          | Transaction & Log|
-          +------------------+
+```mermaid
+graph TD
+    classDef default fill:#111827,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
+    classDef highlight fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#ffffff;
+
+    USER[USER] --> B[F Pay Interface]
+    B --> C[Authentication & Access Control]
+    C --> D[Wallet Dashboard]
+    D --> E[20-Layer Money Management]
+    E --> F[Transaction Assessment Layer]
+    
+    F --> G[Budget & Plan Comparison]
+    F --> H[Security & Risk Awareness]
+    
+    G --> I[Warning / Review]
+    H --> I
+    
+    I --> J[User Confirmation]
+    J --> K[Simulated Transaction & Log]
+
+    class A,B,C,D,E,F,G,H,I,J,K default;
 ```
 
 ### Architectural Principle
