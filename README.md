@@ -2,255 +2,709 @@
 
 ### Your Money. Your Control. Your Security.
 
-**Project Category:** FinTech · Digital Wallet Security · Financial Risk Awareness  
-**Project Type:** Prototype & System Design  
-**Researcher:** Nahid Mahmud  
-**Affiliation:** Department of Computer Science and Engineering, Varendra University, Bangladesh
+<p align="center">
+  <strong>Organize Money · Understand Transactions · Improve Financial Security</strong>
+</p>
+
+F Pay is a security-oriented digital wallet prototype exploring how structured money management, purpose-aware budgeting, transaction risk awareness, and user-controlled security workflows can work together in a unified financial interface.
+
+The project began as a lightweight prototype built with HTML, CSS, JavaScript, and Python. For the next development phase, we propose evolving it into a modular application with a modern frontend, a dedicated backend, transaction assessment services, and an optional permissioned blockchain and privacy-preserving technology layer.
+
+> **Project status:** Phase 1 — Prototype developed. Phase 2 — Proposed architecture and planned development.
+
+---
+
+## Table of Contents
+
+1. [Project Overview](#1-project-overview)
+2. [The Problem](#2-the-problem)
+3. [Our Proposed Solution](#3-our-proposed-solution)
+4. [Core Innovation: The 20-Layer Money Management Model](#4-core-innovation-the-20-layer-money-management-model)
+5. [Key Features](#5-key-features)
+6. [Phase 1: Initial Prototype](#6-phase-1-initial-prototype)
+7. [Phase 2: Proposed System Architecture](#7-phase-2-proposed-system-architecture)
+8. [Planned Technology Stack](#8-planned-technology-stack)
+9. [Transaction Workflow](#9-transaction-workflow)
+10. [AI Sub: Purpose-Aware Budget Intelligence](#10-ai-sub-purpose-aware-budget-intelligence)
+11. [Security and Privacy by Design](#11-security-and-privacy-by-design)
+12. [Decoy and Sandbox Mode](#12-decoy-and-sandbox-mode)
+13. [Phase 2 Development Roadmap](#13-phase-2-development-roadmap)
+14. [Testing and Evaluation](#14-testing-and-evaluation)
+15. [Current Limitations](#15-current-limitations)
+16. [Future Vision](#16-future-vision)
+17. [Research References](#17-research-references)
+18. [Project Information](#18-project-information)
 
 ---
 
 ## 1. Project Overview
 
-Digital wallets have made financial transactions faster and more convenient. However, users may still face challenges such as unexpected spending, unauthorized transactions, financial fraud, and situations where they are pressured into transferring money.
+Digital wallets make payments faster and more accessible. However, users can still encounter unexpected expenses, unauthorized access, misleading transaction requests, financial fraud, and situations in which they are pressured to transfer money.
 
-**F Pay** is a protective digital wallet concept designed to explore how financial organization, transaction-context awareness, and user-controlled security features can work together within a single system.
+Most wallet experiences primarily focus on balance visibility, payment execution, and transaction history. Budgeting, security monitoring, and transaction-context review may be provided through separate tools or provider-specific features.
 
-Instead of focusing only on storing balances and recording transactions, F Pay introduces an additional protection-oriented layer that aims to help users review potentially unexpected or risky transactions before proceeding.
+**F Pay explores a more integrated approach.**
 
-The project combines a structured virtual money-management model, purpose-aware budget monitoring, transaction risk awareness, and protected access into one unified framework.
+Its proposed framework combines virtual money organization, spending-plan comparison, transaction risk awareness, and security-focused review workflows to help users make more informed financial decisions.
 
-## 2. The Core Idea Behind F Pay
+The system is organized around three principles:
 
-F Pay is built around three principles:
+- **Organize:** Structure available funds into purpose-based virtual money layers.
+- **Understand:** Compare proposed transactions with relevant spending plans and contextual information.
+- **Protect:** Provide appropriate security checks and review opportunities before a transaction proceeds.
 
-- **Organize:** Give users more structured control over how their wallet balance is allocated.
-- **Understand:** Compare intended spending with the context of a proposed transaction.
-- **Protect:** Provide useful warnings and security checks before a user proceeds.
+F Pay is currently a prototype and system-design project. Its longer-term objective is to investigate how these capabilities could be implemented in a secure, scalable application.
 
-The objective is to make digital financial interactions more transparent and deliberate without unnecessarily complicating the user experience.
+## 2. The Problem
 
-## 3. The 20-Layer Money Management System
+### 2.1 Limited purpose-based money organization
 
-One of F Pay's central design elements is its **20-layer virtual money management system**.
+When users see a single wallet balance, it may be difficult to understand how much money is intended for education, transportation, subscriptions, savings, emergencies, or other purposes.
 
-Rather than presenting all available money as a single undifferentiated balance, the proposed interface allows users to organize portions of their available balance into separately named virtual layers.
+### 2.2 Unexpected or unplanned spending
 
-Each layer can represent a user-defined financial purpose, such as education, food, transportation, savings, subscriptions, emergency funds, or personal expenses.
+A transaction can be technically valid but still conflict with the user's financial plan.
 
-### Example: A 20-Layer Wallet
+For example, a user may have planned to spend ৳500 on a subscription but initiate a transaction for ৳1,000.
 
-| Layer | Example purpose |
-|---|---|
-| Layer 01 | Daily Essentials |
-| Layer 02 | Food & Groceries |
-| Layer 03 | Transportation |
-| Layer 04 | Education |
-| Layer 05 | Internet & Mobile |
-| Layer 06 | Subscriptions |
-| Layer 07 | Health & Wellness |
-| Layer 08 | Emergency Reserve |
-| Layer 09 | Personal Savings |
-| Layer 10 | Family Support |
-| Layer 11 | Shopping |
-| Layer 12 | Entertainment |
-| Layer 13 | Skill Development |
-| Layer 14 | Technology |
-| Layer 15 | Travel |
-| Layer 16 | Bills & Utilities |
-| Layer 17 | Gifts & Donations |
-| Layer 18 | Future Goals |
-| Layer 19 | Business & Projects |
-| Layer 20 | Custom Purpose |
+### 2.3 Limited transaction-context awareness
 
-*These are illustrative categories, not fixed requirements. Users can define their own layer names and purposes.*
+A transaction's amount alone may not provide enough information to determine whether it deserves additional review. Its purpose, the user's saved plans, and relevant historical context may also matter.
 
-### How the Layer Model Works
+### 2.4 Security challenges involving unauthorized or pressured transfers
 
-1. The user views the main wallet balance.
-2. The user allocates available funds to selected virtual layers.
-3. Each layer maintains its own logical allocation and associated information.
-4. Access to protected layer operations can require additional authentication.
-5. The interface helps the user understand which funds are allocated to which purposes.
+Financial security involves more than password or PIN verification. An attacker may obtain credentials, and a user may enter valid credentials while under pressure.
 
-The layers are a **logical organization of funds**, not 20 separate bank accounts. In the current prototype, all transactions are simulated; the design does not represent independently held or guaranteed protected funds.
+These situations require careful treatment because unusual behaviour does not automatically prove fraud or coercion.
 
-## 4. System Architecture
+### 2.5 Fragmented financial tools
 
-The architecture separates the user interface, access controls, money organization, transaction assessment, and transaction simulation.
-
-```mermaid
-graph TD
-    classDef default fill:#111827,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
-    classDef highlight fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#ffffff;
-
-    USER[USER] --> B[F Pay Interface]
-    B --> C[Authentication & Access Control]
-    C --> D[Wallet Dashboard]
-    D --> E[20-Layer Money Management]
-    E --> F[Transaction Assessment Layer]
-    
-    F --> G[Budget & Plan Comparison]
-    F --> H[Security & Risk Awareness]
-    
-    G --> I[Warning / Review]
-    H --> I
-    
-    I --> J[User Confirmation]
-    J --> K[Simulated Transaction & Log]
-
-    class A,B,C,D,E,F,G,H,I,J,K default;
-```
-
-### Architectural Principle
-
-F Pay is designed around a modular structure. This allows its money-management interface, budget features, access controls, and transaction assessment to evolve independently as the prototype matures.
-
-The architecture represents the proposed workflow; production payment authorization and enforcement would require appropriate backend infrastructure and integration with an authorized financial service provider.
-
-## 5. Key Features
-
-### 5.1 Purpose-Based Money Organization
-
-The 20-layer model allows users to separate their financial intentions into manageable virtual allocations. This can make planned spending easier to understand and review.
-
-### 5.2 Transaction Risk Awareness
-
-F Pay explores ways to assess transaction context and highlight activity that may deserve additional attention.
-
-A warning is intended to support user judgment—not to claim that a transaction is definitely fraudulent or that every fraud attempt can be detected.
-
-### 5.3 AI Sub — Smart Budget Assistant
-
-AI Sub is the proposed budgeting component of F Pay.
-
-Users can create spending plans with a title, an optional layer association, an amount, and a reporting interval. The system can compare a proposed expense with the relevant saved plan.
-
-For example, if a user has planned ৳500 for a subscription but proposes spending ৳1,000, F Pay can display a budget discrepancy warning before the user proceeds.
-
-This is an illustrative budget-checking workflow; it does not imply that every feature currently uses a trained AI model.
-
-### 5.4 Pre-Transaction Review
-
-When the system identifies a relevant discrepancy or potential concern, the interface can show an alert and provide the user with an opportunity to review the transaction.
-
-A prototype warning does not itself stop a real payment. Enforcing a hold or rejection would require an authorized payment-provider integration.
-
-### 5.5 Protected Access & Recovery
-
-The concept includes PIN-based access, OTP verification in the demonstration workflow, and configurable recovery options.
-
-These controls are intended to strengthen account access management. A valid PIN or OTP alone cannot establish that a transaction is voluntary, nor can these mechanisms guarantee protection from coercion.
-
-### 5.6 Isolated Demonstration Mode
-
-A separate sandbox mode can demonstrate the wallet experience using fictional balances and transaction records. It is intended for testing and presentations, with simulated activity kept separate from real payment claims.
+Money organization, budgeting, account security, and transaction monitoring are distinct functions. F Pay explores bringing them together in one modular workflow.
 
 ---
 
-## 6. F Pay vs. a Conventional Wallet
+## 3. Our Proposed Solution
 
-The following comparison describes the intended design scope of F Pay, not a claim that every existing wallet lacks the listed capabilities.
+F Pay introduces a protective layer around the digital wallet experience.
 
-| Capability | Conventional wallet baseline | F Pay design focus |
+Instead of treating a wallet solely as a balance and payment interface, the proposed design adds structured money management and transaction-context review.
+
+### The F Pay approach
+
+1. Organize money into 20 user-configurable virtual layers.
+2. Allow users to define spending plans for relevant purposes.
+3. Compare proposed transactions against applicable plans.
+4. Identify selected discrepancies or risk indicators.
+5. Present a review warning when appropriate.
+6. Record the relevant activity in a controlled and auditable workflow.
+
+The goal is not to claim that every fraudulent transaction can be identified. The goal is to investigate whether better financial organization and contextual review can improve user awareness and support safer decisions.
+
+---
+
+## 4. Core Innovation: The 20-Layer Money Management Model
+
+The 20-layer virtual money model is one of F Pay's central design elements.
+
+It allows a user to divide a wallet's available balance into logically separate allocations, each associated with a purpose.
+
+These layers are not separate bank accounts. They are virtual allocations within the proposed wallet system.
+
+### Example: 20 Virtual Money Layers
+
+| Layer | Example purpose |
+|---|---|
+| 01 | Daily Essentials |
+| 02 | Food and Groceries |
+| 03 | Transportation |
+| 04 | Education |
+| 05 | Internet and Mobile |
+| 06 | Subscriptions |
+| 07 | Health and Wellness |
+| 08 | Emergency Reserve |
+| 09 | Personal Savings |
+| 10 | Family Support |
+| 11 | Shopping |
+| 12 | Entertainment |
+| 13 | Skill Development |
+| 14 | Technology |
+| 15 | Travel |
+| 16 | Bills and Utilities |
+| 17 | Gifts and Donations |
+| 18 | Future Goals |
+| 19 | Business and Projects |
+| 20 | Custom Purpose |
+
+These are illustrative labels. Users should be able to customize their layer names and intended purposes.
+
+### How the model is intended to work
+
+- The user views the main wallet balance.
+- The user allocates available funds to selected virtual layers.
+- The system tracks each layer's allocation.
+- Sensitive operations require appropriate authentication and server-side authorization.
+- The user can review the relationship between spending plans, layer allocations, and proposed transactions.
+
+A future implementation must enforce balance consistency and prevent spending the same funds more than once.
+
+The 20-layer model is the current prototype's design scope. Supporting hundreds of configurable layers is a potential future scalability objective, not a completed capability.
+
+---
+
+## 5. Key Features
+
+### 5.1 Virtual Money Management
+
+A purpose-based interface for organizing funds into separate logical allocations.
+
+### 5.2 Transaction Risk Awareness
+
+A proposed assessment layer that can evaluate defined transaction indicators and flag activity requiring further review.
+
+Risk assessments should communicate uncertainty and must not treat every unusual transaction as fraudulent.
+
+### 5.3 AI Sub — Smart Budget Assistant
+
+A planned budgeting component that lets users define spending plans and compare proposed expenses against those plans.
+
+### 5.4 Pre-Transaction Review
+
+A warning interface for relevant budget discrepancies or selected risk indicators before the user proceeds.
+
+In a standalone prototype, this is a simulated review workflow. Preventing a real payment requires control over the payment execution process through an authorized financial service provider.
+
+### 5.5 Authentication and Recovery
+
+A security-oriented access workflow involving PIN-based access, demonstration-level OTP verification, and recovery options.
+
+Production deployment would require stronger credential handling, abuse prevention, secure recovery procedures, and independent security review.
+
+### 5.6 Activity Records
+
+A structured record of relevant actions and simulated transactions. A future backend can provide stronger validation and access-controlled audit records.
+
+### 5.7 Isolated Sandbox Experience
+
+A separate demonstration environment for exploring decoy or sandbox interactions without executing real payments.
+
+---
+
+## 6. Phase 1: Initial Prototype
+
+**Status: Prototype developed**
+
+The first phase focused on translating the core idea into a demonstrable application without requiring a full financial-services infrastructure.
+
+### Technology used
+
+- HTML — application structure
+- CSS — interface styling and layout
+- JavaScript — client-side interactions
+- Python — used within the prototype development context
+
+### Phase 1 objectives
+
+- Establish the basic F Pay concept.
+- Demonstrate the wallet interface.
+- Represent the 20-layer money-management model.
+- Explore the proposed access and transaction workflows.
+- Demonstrate how budgeting and transaction review could fit into the user experience.
+- Create a foundation for the next development phase.
+
+### What Phase 1 represents
+
+Phase 1 is the initial prototype, not a production-ready digital wallet.
+
+The existence of a demonstration interface does not by itself establish that backend authorization, secure financial storage, real OTP delivery, payment processing, blockchain integration, or reliable fraud detection has been implemented.
+
+Any feature presented during a demonstration should be identified according to its actual implementation status.
+
+### Why we chose a lightweight prototype first
+
+Building a lightweight prototype allowed us to explore the user experience and validate the general workflow before committing to a more complex architecture.
+
+This approach also creates a clearer development path: preserve the useful interface and product concepts, then introduce stronger backend controls and modular services where they provide measurable value.
+
+---
+
+## 7. Phase 2: Proposed System Architecture
+
+**Status: Planned — subject to implementation and testing**
+
+Phase 2 aims to evolve F Pay from a lightweight prototype into a modular application with clearly separated responsibilities.
+
+The proposed architecture contains three primary layers.
+
+### Layer 1 — Frontend and User Experience
+
+**Proposed technologies:** React or Next.js, Tailwind CSS
+
+Responsibilities:
+
+- Wallet dashboard and main balance view
+- 20-layer money-management interface
+- Layer allocation and review screens
+- Transaction creation and confirmation interfaces
+- Budget plans and AI Sub analytics
+- Security warnings and access workflows
+- Sandbox and demonstration interface
+
+The frontend will communicate with the backend through validated API requests.
+
+Security-critical decisions must not rely exclusively on client-side JavaScript.
+
+### Layer 2 — Backend, AI and Logic Middleware
+
+**Proposed technologies:** Python, FastAPI, relational database
+
+Responsibilities:
+
+- User authentication and authorization
+- Server-side layer allocation and balance validation
+- Transaction request validation
+- Expense categorization and budget comparison
+- Configurable transaction-risk assessment
+- Review and warning workflow
+- Activity records and audit logging
+- Controlled integration with external services
+
+The backend acts as the central coordination layer.
+
+It receives requests, validates permissions, evaluates applicable rules, and determines which operations the application is permitted to perform.
+
+### Layer 3 — Blockchain and Privacy Technologies
+
+**Technologies under evaluation:** FISCO BCOS, Solidity smart contracts, selected WeDPR components where suitable
+
+Potential responsibilities:
+
+- Verifiable records for selected events
+- Integrity references for audit purposes
+- Permissioned blockchain experiments
+- Privacy-preserving processing for suitable use cases
+- Evaluation of whether blockchain provides measurable value over a conventional database
+
+Not every transaction or personal financial record needs to be stored on-chain.
+
+Sensitive personal information should generally remain in appropriately protected off-chain storage. Only carefully selected, justified records or cryptographic references should be considered for on-chain publication.
+
+Blockchain integration is a proposed research and engineering direction, not a completed Phase 1 feature.
+
+### Proposed Architecture Diagram
+
+```text
+┌──────────────────────────────────────────────┐
+│          LAYER 1: FRONTEND & UX               │
+│                                              │
+│  React / Next.js / Tailwind CSS              │
+│  • 20-Layer Wallet Dashboard                 │
+│  • Budget Plans & Transaction Review         │
+│  • Security Alerts & Sandbox UI              │
+└──────────────────────┬───────────────────────┘
+                       │
+                 HTTPS / JSON
+                       │
+                       ▼
+┌──────────────────────────────────────────────┐
+│       LAYER 2: BACKEND & LOGIC               │
+│                                              │
+│  Python / FastAPI                            │
+│  • Authentication & Authorization            │
+│  • Wallet & Layer Management                 │
+│  • Budget Comparison                         │
+│  • Transaction Risk Assessment                │
+│  • Audit Logging                             │
+└───────────────┬───────────────────┬──────────┘
+                │                   │
+                ▼                   ▼
+┌────────────────────────┐  ┌──────────────────┐
+│  RELATIONAL DATABASE   │  │ REVIEW WORKFLOW  │
+│                        │  │                  │
+│  Users & Allocations   │  │ Warnings         │
+│  Plans & Transactions  │  │ Confirmation     │
+│  Audit References      │  │ Status Tracking  │
+└────────────────────────┘  └─────────┬────────┘
+                                      │
+                                      ▼
+                         ┌────────────────────────┐
+                         │ OPTIONAL BLOCKCHAIN    │
+                         │ & PRIVACY INTEGRATION  │
+                         │                        │
+                         │ FISCO BCOS             │
+                         │ Solidity Contracts     │
+                         │ Selected WeDPR Tools   │
+                         └────────────────────────┘
+```
+
+This is a proposed logical architecture. The final component boundaries and integration methods will be determined through compatibility testing and implementation.
+
+---
+
+## 8. Planned Technology Stack
+
+| Component | Proposed technology | Purpose |
 |---|---|---|
-| Balance display | View available balance | Balance plus purpose-based organization |
-| Money allocation | Depends on the provider | 20 configurable virtual layers |
-| Budget planning | Varies by application | AI Sub planning and comparison concept |
-| Spending alerts | Depends on provider rules | Contextual review of planned vs. proposed spending |
-| Transaction assessment | Varies by provider | Dedicated risk-awareness design layer |
-| Access security | Provider-specific controls | PIN/OTP demonstration and configurable access workflow |
-| Coercion-related protection | Depends on provider capabilities | A research direction requiring specialized safety design |
-| Payment execution | Supported by integrated providers | Simulated in the current prototype |
+| Frontend | React or Next.js | Interactive application interface |
+| Styling | Tailwind CSS | Consistent, responsive UI |
+| Backend | Python and FastAPI | APIs and application logic |
+| Database | PostgreSQL | Structured application data |
+| API format | REST and JSON | Communication between frontend and backend |
+| Risk assessment | Rules engine first; ML evaluated later | Explainable transaction review |
+| Smart contracts | Solidity, where supported | Selected on-chain logic |
+| Blockchain | FISCO BCOS, subject to compatibility validation | Permissioned blockchain experiments |
+| Privacy technology | Suitable WeDPR components, if justified | Privacy-preserving computation experiments |
+| Testing | Automated API, security, and integration tests | Verify correctness and reliability |
+| Version control | Git and GitHub | Source control and project collaboration |
 
-**The key distinction:** F Pay explores how money organization and transaction-context awareness can be brought together in one protective workflow.
+### Why these technologies?
 
-## 7. Example User Scenario
+**React or Next.js:** Suitable for building a modular interface with reusable components.
 
-Imagine a student who allocates funds across education, transport, food, subscriptions, and emergency savings.
+**FastAPI:** Provides a Python-based approach to building typed APIs and separating backend responsibilities.
 
-The student has set a planned subscription budget of ৳500. Later, they initiate a transaction of ৳1,000 for the same purpose.
+**PostgreSQL:** Supports structured data, relational integrity, and transactional operations needed for consistent wallet allocations.
 
-A possible F Pay workflow is:
+**Rules engine before machine learning:** Explicit rules are easier to explain, test, and validate during early development. Machine-learning components should be introduced only when suitable data, evaluation criteria, and a clear benefit are available.
 
-1. The user enters the proposed transaction.
-2. The system checks the relevant saved spending plan.
-3. A discrepancy is identified.
-4. The interface displays a review warning.
-5. The user reviews the information and decides how to proceed within the prototype.
+**FISCO BCOS and WeDPR:** These technologies will be evaluated against specific requirements. They should be included only where compatibility, privacy, and operational benefits justify their complexity.
 
-This illustrates **purpose-aware spending support**. It does not prove fraud, identify the user's intention with certainty, or guarantee that a harmful transaction will be prevented.
+The stack is a proposal, not a claim that every listed component is already integrated.
 
-## 8. Security and Privacy Considerations
+---
 
-Financial protection requires more than a visually convincing interface. A practical implementation would need to consider:
+## 9. Transaction Workflow
 
-- Secure authentication and appropriately protected credentials.
-- Server-side authorization for sensitive operations.
-- Transaction integrity and consistent balance accounting.
-- Rate limits and monitoring for repeated authentication attempts.
-- Secure handling of recovery methods and OTPs.
-- Audit logs with appropriate access controls.
-- Privacy-conscious collection and retention of personal and financial information.
-- Threat modelling, testing, and independent security review.
+A typical proposed transaction-review workflow is:
 
-F Pay's long-term direction also considers fraud and coercion-related risks. These are difficult problems: a user may enter valid credentials under pressure, and unusual transaction behaviour can have legitimate explanations. Any advanced protective workflow would need careful evaluation to avoid false alarms or creating additional risks for vulnerable users.
+1. The user enters a transaction request.
+2. The frontend sends the request to the backend over a protected connection.
+3. The backend validates the user's identity, permissions, and request data.
+4. The system checks the relevant virtual allocation and available balance.
+5. The budget component compares the transaction with the user's saved plan.
+6. The assessment component evaluates configured risk indicators.
+7. If a relevant discrepancy is identified, the system requests review or presents a warning.
+8. The user reviews the information and chooses how to proceed, where the applicable workflow permits.
+9. The backend records the outcome and maintains consistent application state.
+10. If justified, a selected audit reference may be sent to a blockchain integration.
 
-## 9. Current Prototype and Future Scope
+```text
+Transaction Request
+        |
+        v
+Authentication & Authorization
+        |
+        v
+Request and Balance Validation
+        |
+        v
+Budget and Risk Assessment
+        |
+        v
+Review Required?
+    /          \
+   Yes          No
+    |            |
+    v            v
+Review UI    Normal Workflow
+    |            |
+    +------+-----+
+           |
+           v
+Authorized Outcome
+           |
+           v
+Activity Record
+           |
+           v
+Optional Verifiable Reference
+```
 
-### Current Prototype
+This workflow describes the intended application design. A production system must define precise authorization, transaction-state, error-handling, and payment-provider integration rules.
 
-- 20-layer wallet interface.
-- User-defined virtual money organization.
-- Demonstration-level PIN and OTP workflows.
-- Budget-planning and transaction-review concepts.
-- Simulated transaction history.
-- Isolated sandbox demonstration.
+A warning is not equivalent to a payment hold. Real payment enforcement requires the system to have authorized control over payment execution.
 
-### Future Research and Development
+---
 
-- Stronger transaction-context analysis.
-- Evaluation of risk indicators using appropriately sourced, privacy-protected test data.
-- Improved security testing and usability evaluation.
-- Careful research into coercion-aware user safety.
-- Authorized provider integration for real transaction review or enforcement.
-- Scalability studies for more configurable money-management layers.
+## 10. AI Sub: Purpose-Aware Budget Intelligence
 
-These are planned directions, not claims of completed capabilities.
+AI Sub is the proposed budgeting and spending-analysis component of F Pay.
 
-## 10. Research and Evaluation Plan
+### Planned capabilities
 
-F Pay can be evaluated through controlled scenarios covering ordinary transactions, budget discrepancies, suspicious patterns, authentication failures, and simulated coercion-related situations.
+- Create a spending plan with a title and amount.
+- Associate a plan with a relevant virtual layer when appropriate.
+- Configure reporting intervals, such as 7, 15, or 30 days.
+- Compare a proposed transaction with the relevant plan.
+- Display budget discrepancies before confirmation.
+- Summarize planned versus recorded spending.
+- Explore more advanced analytics after the basic workflow is validated.
 
-Potential evaluation measures include:
+### Example
 
-- Accuracy of budget discrepancy detection.
-- False-positive and false-negative rates for any defined risk classifier.
-- Time required for users to understand and respond to warnings.
-- Authentication and authorization test results.
-- Usability and accessibility feedback.
+Suppose a user has created this plan:
 
-No fraud-detection accuracy, fraud-reduction rate, or coercion-detection performance is claimed without measured experimental evidence.
+| Field | Value |
+|---|---|
+| Purpose | Subscription |
+| Planned amount | ৳500 |
+| Proposed transaction | ৳1,000 |
+| Difference | ৳500 above plan |
 
-## 11. Relevant References
+F Pay can identify that the proposed amount exceeds the saved plan and ask the user to review it.
 
-The design is informed by established work and security guidance relevant to financial behaviour, authentication, and account recovery.
+This is a budget discrepancy, not proof of fraud.
 
-1. Thaler, R. H. (1999). “Mental Accounting Matters.” *Journal of Behavioral Decision Making, 12*(3), 183–206. https://doi.org/10.1002/(SICI)1099-0771(199909)12:3%3C183::AID-BDM318%3E3.0.CO;2-F
+### Planned implementation strategy
 
-2. OWASP Foundation. *Multifactor Authentication Cheat Sheet.* https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html
+**Stage 1:** Deterministic budget comparisons and explainable rules.
 
-3. OWASP Foundation. *Forgot Password Cheat Sheet.* https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html
+**Stage 2:** Expense categorization and configurable contextual indicators.
 
-4. Bangladesh Bank. *Bangladesh Mobile Financial Services (MFS) Regulations, 2022.* Refer to the official Bangladesh Bank website for the applicable regulatory text: https://www.bb.org.bd/
+**Stage 3:** Evaluation of machine-learning methods, if suitable data and measurable improvements justify them.
 
-These references provide background and security guidance; they do not independently validate F Pay's proposed effectiveness.
+No trained AI capability or detection performance should be claimed until the corresponding component has actually been implemented and tested.
 
-## 12. Conclusion
+---
 
-F Pay proposes a protective digital wallet framework that brings together **20-layer virtual money management, purpose-aware budget comparison, transaction risk awareness, and user-controlled security workflows**.
+## 11. Security and Privacy by Design
 
-Its central idea is to help users organize their money and make more informed decisions before proceeding with a transaction.
+Security is a core engineering requirement for F Pay, not merely a visual feature.
 
-The current prototype is a foundation for demonstrating and evaluating that concept. Real-world fraud prevention, coercion-aware intervention, and payment enforcement remain areas for further research, rigorous testing, and appropriate financial-service integration.
+### 11.1 Authentication and authorization
 
-**F Pay — More than tracking money. A framework for more thoughtful, security-aware financial decisions.**
+A production implementation should use appropriately protected credentials, server-side permission checks, secure session handling, and rate limits for sensitive operations.
+
+A PIN or OTP can help verify access, but valid credentials do not necessarily prove that a transaction is voluntary.
+
+### 11.2 Balance integrity
+
+The backend should enforce allocation constraints, prevent double spending within the application model, and use database transactions for operations that update balances.
+
+### 11.3 API security
+
+The application should validate input, enforce authorization for every sensitive operation, apply appropriate rate limits, and avoid exposing sensitive internal information through error messages.
+
+### 11.4 Privacy-conscious data handling
+
+The system should collect only the information necessary for its functions and define retention, access, and deletion policies.
+
+Sensitive financial information should not be placed on a public or broadly replicated ledger without a strong, justified privacy design.
+
+### 11.5 Auditability
+
+Activity records can help investigate application errors and reconstruct selected operations. Audit access should be restricted and protected against unauthorized modification.
+
+### 11.6 Fraud and coercion limitations
+
+Unusual transaction behaviour may be legitimate, while a harmful transaction may look normal.
+
+Any future risk assessment must be evaluated for false positives, false negatives, usability, and possible harm. Coercion-related protection requires specialized safety research and cannot be guaranteed by PINs, OTPs, or a simple risk score.
+
+---
+
+## 12. Decoy and Sandbox Mode
+
+F Pay explores an isolated sandbox experience as part of its security-oriented design.
+
+The purpose is to demonstrate a separate wallet-like environment with fictional balances and simulated transaction history.
+
+### Design principles
+
+- Clearly isolate sandbox state from real wallet state.
+- Label the environment appropriately during testing and demonstrations.
+- Prevent sandbox transactions from invoking real payment services.
+- Ensure the backend enforces separation rather than relying only on the interface.
+- Test whether switching between environments can expose or alter another environment's data.
+
+A decoy interface should not be represented as a proven coercion-defense mechanism. A person applying pressure may still recognize or reject a decoy, and an unsafe intervention could create additional risk.
+
+Any production implementation of a duress-related feature would require threat modelling, expert review, careful user research, and appropriate safety testing.
+
+---
+
+## 13. Phase 2 Development Roadmap
+
+The second phase will prioritize a working, testable application before adding complex infrastructure.
+
+### Stage 1 — Frontend Modernization
+
+- Rebuild the prototype interface using React or Next.js.
+- Implement reusable dashboard, layer, budget, and transaction components.
+- Improve responsive layouts and accessibility.
+- Preserve the 20-layer concept and relevant user workflows.
+
+**Deliverable:** A modular frontend connected to defined application states.
+
+### Stage 2 — Backend and Database
+
+- Build API endpoints using FastAPI.
+- Design a PostgreSQL schema for users, layer allocations, plans, and activity records.
+- Implement authentication and server-side authorization.
+- Add validation for allocation and transaction operations.
+- Define transaction-state and error-handling behaviour.
+
+**Deliverable:** A functioning application backend with persistent, validated data.
+
+### Stage 3 — Budget and Transaction Assessment
+
+- Implement budget comparison rules.
+- Add configurable transaction-review indicators.
+- Build clear warnings and review states.
+- Record relevant outcomes for testing.
+- Evaluate false alerts and ordinary user scenarios.
+
+**Deliverable:** An explainable transaction-review workflow.
+
+### Stage 4 — Security Hardening
+
+- Test authentication and authorization boundaries.
+- Add rate limits and appropriate monitoring.
+- Verify allocation consistency and sandbox isolation.
+- Review sensitive data handling.
+- Perform API and application security tests.
+
+**Deliverable:** A more robust prototype with documented test results.
+
+### Stage 5 — Blockchain Feasibility and Integration
+
+- Confirm FISCO BCOS version and SDK compatibility.
+- Establish a local or permitted test environment.
+- Define one specific use case for a smart contract.
+- Evaluate the cost and operational complexity of on-chain records.
+- Test whether selected records can be verified correctly.
+
+**Deliverable:** A working blockchain proof of concept, if feasibility testing succeeds.
+
+### Stage 6 — Privacy Technology Evaluation
+
+- Identify a precise privacy requirement.
+- Review suitable WeDPR components and their current documentation.
+- Assess integration compatibility.
+- Test the selected capability with synthetic or appropriately authorized data.
+- Document performance and privacy trade-offs.
+
+**Deliverable:** A tested privacy-preserving proof of concept, if justified and feasible.
+
+### Stage 7 — End-to-End Evaluation
+
+- Run normal, boundary, and failure scenarios.
+- Evaluate budget-warning behaviour.
+- Verify backend authorization.
+- Test sandbox separation.
+- Measure response time and system reliability.
+- Document limitations and next steps.
+
+**Deliverable:** An evaluated prototype and a reproducible demonstration.
+
+---
+
+## 14. Testing and Evaluation
+
+F Pay's effectiveness should be measured through reproducible tests rather than assumed from its architecture.
+
+| Test area | Example evaluation |
+|---|---|
+| Layer management | Verify allocations and balance consistency |
+| Budget assessment | Check correct detection of planned-versus-proposed discrepancies |
+| Authorization | Verify that unauthorized operations are rejected |
+| Sandbox isolation | Confirm that sandbox actions cannot modify real payment state |
+| API validation | Test malformed, incomplete, and unauthorized requests |
+| Audit records | Check whether selected events are recorded consistently |
+| Blockchain integration | Verify selected smart-contract operations and record references |
+| Privacy component | Test the defined privacy use case and its limitations |
+| Usability | Measure whether users understand warnings and review options |
+| Performance | Measure response times under defined test conditions |
+
+Any machine-learning component would additionally require suitable evaluation data, documented metrics, and analysis of false positives and false negatives.
+
+No fraud-reduction rate, coercion-detection accuracy, or production security guarantee is claimed without appropriate evidence.
+
+---
+
+## 15. Current Limitations
+
+F Pay remains a developing prototype and research-oriented system design.
+
+Current limitations include:
+
+- The initial prototype does not constitute a production payment service.
+- Demonstration transactions do not move real money.
+- A frontend warning cannot independently block payments in external wallet applications.
+- The proposed modern frontend, production backend, database integration, and blockchain layer require implementation and testing.
+- The usefulness of machine learning depends on appropriate data and validated performance.
+- Coercion detection is an unresolved, difficult safety problem.
+- Blockchain integration may add complexity without sufficient benefit unless a specific use case justifies it.
+- Regulatory, operational, and security requirements would need to be addressed before any real financial deployment.
+
+These limitations define the next engineering and research tasks rather than invalidate the project's overall direction.
+
+---
+
+## 16. Future Vision
+
+The long-term vision is to explore a digital wallet framework that combines user-controlled financial organization with contextual transaction review and appropriately designed security controls.
+
+Potential future directions include:
+
+- Scalable virtual money management beyond the initial 20-layer design.
+- Improved expense classification and spending analytics.
+- More rigorous transaction-risk assessment.
+- Carefully researched user-safety workflows.
+- Verifiable records for selected operations.
+- Privacy-preserving processing where there is a clear use case.
+- Integration with authorized financial-service providers.
+- Independent security, usability, and performance evaluation.
+
+A larger layer count, advanced AI, blockchain-based verification, and real-time payment enforcement remain future objectives until each is implemented and validated.
+
+---
+
+## 17. Research References
+
+The following sources provide background for relevant behavioural, security, authentication, and technical design decisions.
+
+1. **Thaler, R. H. (1999).** “Mental Accounting Matters.” *Journal of Behavioral Decision Making, 12*(3), 183–206.  
+   https://doi.org/10.1002/(SICI)1099-0771(199909)12:3%3C183::AID-BDM318%3E3.0.CO;2-F
+
+2. **OWASP Foundation.** *Multifactor Authentication Cheat Sheet.*  
+   https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html
+
+3. **OWASP Foundation.** *Forgot Password Cheat Sheet.*  
+   https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html
+
+4. **FastAPI Documentation.**  
+   https://fastapi.tiangolo.com/
+
+5. **PostgreSQL Documentation.**  
+   https://www.postgresql.org/docs/
+
+6. **FISCO BCOS Documentation and Source Code.**  
+   https://github.com/FISCO-BCOS/FISCO-BCOS
+
+7. **WeDPR Project.** Privacy-preserving computing technologies and related documentation.  
+   https://github.com/WeBankBlockchain/WeDPR
+
+8. **Bangladesh Bank.** Official website and applicable financial-services regulations.  
+   https://www.bb.org.bd/
+
+These references provide relevant background and technical documentation. They do not independently establish the novelty, security, or effectiveness of F Pay.
+
+---
+
+## 18. Project Information
+
+**Project Name:** F Pay  
+**Project Category:** FinTech · Digital Wallet Security · Financial Risk Awareness  
+**Development Status:** Initial prototype developed; second-phase architecture proposed  
+**Researcher:** Nahid Mahmud  
+**Affiliation:** Department of Computer Science and Engineering, Varendra University, Bangladesh
+
+### Project Philosophy
+
+F Pay explores a simple idea:
+
+**A digital wallet should help users understand and organize their money, not merely display a balance and process a transaction.**
+
+By combining structured money management, budget awareness, and security-oriented transaction review, F Pay aims to investigate a more considered approach to digital financial interactions.
+
+*F Pay — Your Money. Your Control. Your Security.*
