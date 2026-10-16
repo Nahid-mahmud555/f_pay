@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>F Pay — Demo</title>
+
+<!-- Tailwind CSS (CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Lucide icons (CDN) -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<!-- Inter font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Local stylesheet -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     F PAY — DEMO (CNY · English · WeBank · Budget Alert Popup)
+     ═══════════════════════════════════════════════════════════════════════
+     DEMO ONLY. PINs are toy-hashed, balance lives in localStorage.
+     Real F Pay requires a server. See master prompt §3 and §7.
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<div class="demo-banner">
+  DEMO PROTOTYPE · All balances are simulated in CNY (¥) · Not a real payment service
+</div>
+
+<div id="root"></div>
+<div id="toast" class="toast"></div>
+<div id="modal-root"></div>
+
+<!-- Local application script -->
+<script src="script.js"></script>
+</body>
+</html>
