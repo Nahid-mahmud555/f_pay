@@ -23,7 +23,7 @@ The project began as a lightweight prototype built with HTML, CSS, JavaScript, a
 1. [Project Overview](#1-project-overview)
 2. [The Problem](#2-the-problem)
 3. [Our Proposed Solution](#3-our-proposed-solution)
-4. [Core Innovation: The 20-Layer Money Management Model](#4-core-innovation-the-20-layer-money-management-model)
+4. [Core Innovation: The 30-Layer Money Management Model](#4-core-innovation-the-20-layer-money-management-model)
 5. [Key Features](#5-key-features)
 6. [Phase 1: Initial Prototype](#6-phase-1-initial-prototype)
 7. [Phase 2: Proposed System Architecture](#7-phase-2-proposed-system-architecture)
