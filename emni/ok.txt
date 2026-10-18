@@ -1,0 +1,51 @@
+Dear WANG Yiran and the FinTechathon Organizing Committee,
+
+Greetings from Team VU_SkillStars6N!
+
+We are excited to submit our registration, pitch deck, and prototype deliverables for the 2026 Shenzhen International FinTech Competition (FinTechathon) – International Track, participating under Topic F: Agent Wallet.
+
+Our project, F Pay, is an autonomous agent wallet featuring a 9-layer privacy vault system, active AI budget interception, and a zero-trust decoy mode built upon WeBank's FISCO BCOS and WeDPR open-source ecosystem.
+
+1. Submission Deliverables:
+
+    Official Registration Form: (Attached to this email)
+
+    Project Pitch Deck (PDF): (Attached to this email)
+
+    Interactive Prototype Demo: [এখানে তোর Vercel বা GitHub Pages-এর ডেমো লিংকটা বসা]
+
+    GitHub Repository: [এখানে তোর GitHub Repo-এর লিংক বসা]
+
+    Video Demonstration (YouTube): [https://youtu.be/h1GTrn1wcIY?si=FtPYmqGmXNCuAZ0X]
+    
+
+ 2.    Team Summary (Team Name: Skill_Stars_4N)
+
+    Md. Tohidul Islam Nahid — Team Lead & Core Solutions Architect
+
+        Focus: System Architecture, AI Agent Logic & Security Design
+
+    Najmun Nahar Hira — Frontend & Interactive Web Developer
+
+        Focus: UI/UX Flow, Interactive Prototype & Dynamic States
+
+    Hosnatul Ferdous — Pitch Specialist & Financial Product Analyst
+
+        Focus: Pitch Strategy, Financial Logic & Market Positioning
+
+    R.H.M Romim — Media Producer & Technical Documentation Lead
+
+        Focus: Pitch Video Editing, Documentation & Visual Branding
+
+
+Thank you for your time and consideration. We look forward to the evaluation!
+
+Warm regards,
+
+Md. Tohidul Islam Nahid
+
+Team Lead, Skill_Stars_4N
+
+Computer Science and Engineering
+
+Varendra University, Bangladesh
