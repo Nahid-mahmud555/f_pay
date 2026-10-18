@@ -1,6 +1,6 @@
 Dear WANG Yiran and the FinTechathon Organizing Committee,
 
-Greetings from Team VU_SkillStars6N!
+Greetings from Team Skill_Stars_4N
 
 We are excited to submit our registration, pitch deck, and prototype deliverables for the 2026 Shenzhen International FinTech Competition (FinTechathon) – International Track, participating under Topic F: Agent Wallet.
 
@@ -12,9 +12,9 @@ Our project, F Pay, is an autonomous agent wallet featuring a 9-layer privacy va
 
     Project Pitch Deck (PDF): (Attached to this email)
 
-    Interactive Prototype Demo: [এখানে তোর Vercel বা GitHub Pages-এর ডেমো লিংকটা বসা]
+    Interactive Prototype Demo: [https://fpay00.vercel.app/]
 
-    GitHub Repository: [এখানে তোর GitHub Repo-এর লিংক বসা]
+    GitHub Repository: [https://github.com/Nahid-mahmud555/f_pay]
 
     Video Demonstration (YouTube): [https://youtu.be/h1GTrn1wcIY?si=FtPYmqGmXNCuAZ0X]
     
