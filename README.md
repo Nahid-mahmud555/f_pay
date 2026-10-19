@@ -1,6 +1,6 @@
 # F Pay — A Protective Digital Wallet Framework
 
-### Your Money. Your Control. Your Security. ffff
+### Your Money. Your Control. Your Security.
 
 <p align="center">
   <strong>Organize Money · Understand Transactions · Improve Financial Security</strong>
